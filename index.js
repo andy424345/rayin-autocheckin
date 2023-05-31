@@ -1,5 +1,7 @@
 require('dotenv').config()
-const { LINE_NOTIFY_TOKEN, CUSTNAME } = process.env
+const express = require('express')
+const server = express()
+const { LINE_NOTIFY_TOKEN, CUSTNAME, CORS_AUTH } = process.env
 const schedule = require('node-schedule')
 const axios = require('axios')
 const FormData = require('form-data')
@@ -61,3 +63,8 @@ const offwork = schedule.scheduleJob(rule, async () => {
 setTimeout(async () => {
     await notify(`\n自動簽到已啟動\nCUSTNAME: ${CUSTNAME}`)
 }, 10)
+
+server.use(express.json())
+
+const port = process.env.PORT || 3001
+server.listen(port, () => console.log(`[已準備就緒] port: ${port}`))
