@@ -58,3 +58,6 @@ const offwork = schedule.scheduleJob(rule, async () => {
     await signin('1')
 })
 
+setTimeout(async () => {
+    await notify(`自動簽到已啟動\nCUSTNAME: ${CUSTNAME}`)
+}, 10)
