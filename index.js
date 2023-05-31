@@ -59,5 +59,5 @@ const offwork = schedule.scheduleJob(rule, async () => {
 })
 
 setTimeout(async () => {
-    await notify(`自動簽到已啟動\nCUSTNAME: ${CUSTNAME}`)
+    await notify(`\n自動簽到已啟動\nCUSTNAME: ${CUSTNAME}`)
 }, 10)
