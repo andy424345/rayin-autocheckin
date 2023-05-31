@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const server = express()
 const { LINE_NOTIFY_TOKEN, CUSTNAME, CORS_AUTH } = process.env
 const schedule = require('node-schedule')
@@ -65,6 +66,8 @@ setTimeout(async () => {
 }, 10)
 
 server.use(express.json())
-
+server.use(cors((req, callback) => {
+    callback(null, true)
+}))
 const port = process.env.PORT || 3001
 server.listen(port, () => console.log(`[已準備就緒] port: ${port}`))
