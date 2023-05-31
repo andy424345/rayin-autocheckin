@@ -30,4 +30,4 @@ jobs:
         LINE_NOTIFY_TOKEN: ${{ vars.LINE_NOTIFY_TOKEN }}
         CUSTNAME: ${{ vars.CUSTNAME }}
     - run: npm install
-    - run: npm start
+    - run: npm test
