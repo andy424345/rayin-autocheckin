@@ -1,7 +1,7 @@
 我就懶!
 
 ## 網址
-https://rayin-autocheckin.herokuapp.com/checkin?name=[name]&type=[type]&token=[your token]
+https://rayin-autocheckin.herokuapp.com/checkin?name={name}&type={type}&token={token}
 
 ## 參數
 
