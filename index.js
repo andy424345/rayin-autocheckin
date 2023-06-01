@@ -69,5 +69,8 @@ server.use(express.json())
 server.use(cors((req, callback) => {
     callback(null, true)
 }))
+server.all('/', (req, res) => {
+    res.send('Your bot is alive!')
+})
 const port = process.env.PORT || 3001
 server.listen(port, () => console.log(`[已準備就緒] port: ${port}`))
